@@ -2,6 +2,11 @@
 
 Written in Python 3
 
+To run:
+```shell
+> python ./src/rolling_median.py ./venmo_input/venmo-trans.txt ./venmo_output/output.txt
+```
+
 - Package dependencies
   - [NetworkX](https://networkx.github.io)
   - [json](https://docs.python.org/3/library/json.html)
