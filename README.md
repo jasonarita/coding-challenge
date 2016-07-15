@@ -1,11 +1,13 @@
-# 'ROLLING_MEDIAN.PY'
+# ROLLING_MEDIAN.PY
 
 Written in Python 3
 
 - Package dependencies
   - [NetworkX](https://networkx.github.io)
-  - [JSON](https://docs.python.org/3/library/json.html)
-  - [Statistics](https://docs.python.org/3/library/statistics.html)
+  - [json](https://docs.python.org/3/library/json.html)
+  - [statistics](https://docs.python.org/3/library/statistics.html)
+  - [sys](https://docs.python.org/3/library/sys.html)
+  - [datetime](https://docs.python.org/3/library/datetime.html)
 
 
 
