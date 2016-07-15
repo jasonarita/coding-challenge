@@ -58,15 +58,7 @@ def main(argv):
                                              , time = curr_time)
 
                         # Prune edges that are beyond the time window
-                        edge_list = venmo_graph.edges(data=True)
-
-                        # actor = Maryann-Berry,     target = Maddie-Franklin,     created_time: 2016-04-07T03:34:58Z
-                        for edge_foo in edge_list:
-                            time_check = edge_foo[2]['time']
-                            time_diff  = (curr_time - time_check)
-
-                            if time_diff.total_seconds() > max_time_window_secs:
-                                venmo_graph.remove_edge(edge_foo[0],edge_foo[1])
+                        prune_edges(venmo_graph, curr_time, max_time_window_secs)
                                 
                         # Delete any orphaned nodes
                         prune_orphaned_nodes(venmo_graph)
@@ -96,11 +88,17 @@ def main(argv):
                     output_file.write('%1.2f\n' % median_degree)
 
                     # Feedback
-                    print_graph(venmo_graph)
+                    # print_graph(venmo_graph)
                     # print('Median degrees: %1.2f\n' % median_degree)
                     ########
 
 
+def prune_edges(nx_graph, time_curr, max_time_window_secs):
+
+    edges_outofbounds = [(u,v) for u,v,dat in nx_graph.edges_iter(data=True) 
+                         if (time_curr-dat['time']).total_seconds() > max_time_window_secs]
+    nx_graph.remove_edges_from(edges_outofbounds)
+    return nx_graph
 
 
 def prune_orphaned_nodes(nx_graph):

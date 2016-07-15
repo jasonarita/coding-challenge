@@ -1,4 +1,17 @@
-# Table of Contents
+# 'ROLLING_MEDIAN.PY'
+
+Written in Python 3
+
+- Package dependencies
+  - [NetworkX](https://networkx.github.io)
+  - [JSON](https://docs.python.org/3/library/json.html)
+  - [Statistics](https://docs.python.org/3/library/statistics.html)
+
+
+
+# Coding-Challenge Readme
+-----
+#### Table of Contents
 
 1. [Challenge Summary] (README.md#challenge-summary)
 2. [Details of Implementation] (README.md#details-of-implementation)
