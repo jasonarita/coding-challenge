@@ -5,7 +5,11 @@ import networkx as nx
 from datetime import datetime
 
 def main(argv):
+    """ROLLING_MEDIAN
+    INPUT
+    """   
 
+    
     # Build Graph
     # ------------------------
     #     input_filename       = './insight_testsuite/tests/test-2-0-readme/venmo_input/venmo-trans.txt'
@@ -92,7 +96,7 @@ def main(argv):
                     output_file.write('%1.2f\n' % median_degree)
 
                     # Feedback
-                    # print_graph(venmo_graph)
+                    print_graph(venmo_graph)
                     # print('Median degrees: %1.2f\n' % median_degree)
                     ########
 
@@ -114,8 +118,7 @@ def prune_orphaned_nodes(nx_graph):
 
 
 def calculate_median(nx_graph):
-    """ Return the middle value (ie. median degree) a networkx graph.
-    
+    """ Return the middle degree value (ie. median degree) of a networkx graph.
     """
     
     # create list of all degrees in graph
@@ -131,6 +134,8 @@ def calculate_median(nx_graph):
 
 
 def print_graph(nx_graph):
+    """ Display all edges in a networkx graph
+    """
     edge_list = nx_graph.edges(data=True)
     for edge_foo in edge_list:
         print([ "actor:  "+ edge_foo[0]  \
