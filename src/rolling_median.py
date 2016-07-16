@@ -5,8 +5,14 @@ import networkx as nx
 from datetime import datetime
 
 def main(argv):
-    """ROLLING_MEDIAN
-    INPUT
+    """ROLLING_MEDIAN: Calculates the median degree of a network graph of incoming Venmo transactions
+    
+    INPUT: 
+     - Name of file containing the JSON-data text file ofvenmo transactions 
+     - Name of file to write output to
+     
+     OUTPUT:
+     - Text file containing rolling list of median degrees
     """   
 
     
